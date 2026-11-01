@@ -1,8 +1,13 @@
-// const prompt=require("prompt-sync")();
+const prompt=require("prompt-sync")();
 
 
 let jogando=true;
 let local="Hall de entrada"
+
+
+
+
+
 
 
 
@@ -14,7 +19,8 @@ const Player={
    precisaoTiro:0,
    inventario:[],
    acao:0,
-
+   estado: "andando",
+   escolha:"",
 
 }
 
@@ -31,38 +37,123 @@ const Zumbi={
 
 
 
+// while(jogando=true){
 
 
+ //MOVIMENTAÇÃO
+   
 
-
-
-
-while(jogando=true){
-
-
+   function escolha(){
       
+      Player.escolha= prompt("O que você faz?");  
+      
+   }
+   
+
+
+   function inventario(){
+   if (Player.escolha=== "i"|| Player.escolha==="I") {
+
+   
+   console.log( Player.inventario);
+
+   }
+
+   }
 
 
 
+   if (local!= "Hall de entrada" && Player.escolha===1) {
 
-      //MOVIMENTAÇÃO
 
-      if (Player.vida<=0) {
+      local="Hall de entrada"
 
-      console.log("O policial caiu após ser atacado por um zumbi");
-      jogando=false;
+   }
 
-      }
 
-      if (local==="Hall de entrada"){
+    if (local==="Hall de entrada"){
 
 
 
-      console.log("O policial está na" , local);
+      console.log("O policial está no(a)" , local);
       console.log("O policial entrou no laboratório abandonado, onde o silêncio era perturbador e o ambiente estava tomado pela escuridão. Entre equipamentos destruídos e sinais de contaminação, algo parecia estar à espreita nas sombras.")
 
+      console.log(`
+                  
+                   1- Balcão
+                   2- Porta laboratorios
+                   3- Ala de funcionario
+                   P- Procurar
+                   I- inventario
 
-      }
+
+                  `)
+
+    // Player.escolha= prompt("O que você faz?");
+      escolha();  
+
+   }
+   
+
+   if (Player.escolha==="1"){
+   local= "Balcão";
+   }
+  
+
+
+
+   if (local==="Balcão"){  
+      
+
+   console.log("O policial está no(a)" , local);
+   console.log("O balcão está coberto de documentos espalhados, gavetas abertas e uma cadeira caída.Entre os papéis amassados, um cartão parcialmente encoberto pelo pó chama a atenção.")
+
+   console.log(`
+                  
+                   1- Hall de entrada
+                   P- Procurar
+                   I- inventario
+
+
+                `)
+
+      escolha();  
+      inventario();
+   
+   } 
+
+
+
+   if (local==="Balcão" && Player.escolha==="p"){  
+      
+
+   console.log("O policial está no(a)" , local);
+   console.log("O Ao afastar alguns documentos, o policial encontra uma credencial esquecida. CARTÃO DE ACESSO — FUNCIONÁRIOS.")
+   Player.inventario.push("CARTÃO DE ACESSO")
+   console.log("O policial pega o", Player.inventario[0]);
+   
+
+   console.log(`
+                  
+                   1- Hall de entrada
+                   I- inventario
+
+
+
+                `)
+
+   
+
+      escolha();
+      inventario();
+
+
+   } 
+
+
+
+
+
 
 
 
@@ -75,6 +166,22 @@ while(jogando=true){
 
 
 // COMBATE
+
+
+
+
+
+ if (Player.vida<=0 && Player.estado==="combate"){
+   
+   console.log("O policial caiu após ser atacado por um zumbi");
+   
+      // jogando=false;
+
+      }
+
+
+
+
 
 // function combate(inimigo) {
 
@@ -121,4 +228,3 @@ while(jogando=true){
 
 
 
-}
