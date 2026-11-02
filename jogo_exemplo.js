@@ -37,8 +37,21 @@ const Zumbi={
 
 
 
-// while(jogando=true){
+while(jogando=true){
 
+
+   if (Player.escolha==="0") {
+
+   jogando=false;
+
+   }
+
+
+  
+  if (jogando===false) {
+
+   break;
+  } 
 
  //MOVIMENTAÇÃO
    
@@ -124,7 +137,7 @@ const Zumbi={
 
 
 
-   if (local==="Balcão" && Player.escolha==="p"){  
+   if (local==="Balcão" && Player.escolha==="p" && !Player.inventario.includes("CARTÃO DE ACESSO")){  
       
 
    console.log("O policial está no(a)" , local);
@@ -150,7 +163,7 @@ const Zumbi={
 
    } 
 
-
+}
 
 
 

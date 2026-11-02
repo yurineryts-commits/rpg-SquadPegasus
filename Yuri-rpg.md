@@ -1,6 +1,6 @@
 objetivo: Descobrir a cura para o virus
 
-
+s
 Hall de entrada
 
 -OBEJTOS 
