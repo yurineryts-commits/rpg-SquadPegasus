@@ -120,7 +120,13 @@ while(jogando===true){
 
    
    else if  (local==="Balcão"){  
-      
+         
+
+         if (!Player.inventario.includes("CARTÃO DE ACESSO")) {
+
+
+
+        
 
          console.log("O policial está no(a)" , local);
          console.log("O balcão está coberto de documentos espalhados, gavetas abertas e uma cadeira caída.Entre os papéis amassados, um cartão parcialmente encoberto pelo pó chama a atenção.")
@@ -137,6 +143,31 @@ while(jogando===true){
          escolha();  
          inventario();
 
+          }
+
+
+          else{
+
+         
+
+         console.log("O policial está no(a)" , local);
+         console.log("O balcão está coberto de documentos espalhados, gavetas abertas e uma cadeira caída.Entre os papéis amassados, um cartão parcialmente encoberto pelo pó chama a atenção.")
+
+         console.log(`
+                        
+                         1- Hall de entrada
+                         P- Procurar
+                         I- inventario
+
+
+                      `)
+
+         escolha();  
+         inventario();  
+
+
+
+          }
 
 
 
