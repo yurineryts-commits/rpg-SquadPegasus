@@ -37,7 +37,7 @@ const Zumbi={
 
 
 
-while(jogando=true){
+while(jogando===true){
 
 
    if (Player.escolha==="0") {
@@ -63,28 +63,40 @@ while(jogando=true){
    }
    
 
-
-   function inventario(){
+ function inventario(){
    if (Player.escolha=== "i"|| Player.escolha==="I") {
 
-   
-   console.log( Player.inventario);
+
+      if (Player.inventario.length===0) {
+      
+      console.log("O inventário esta vazio")
+
+      }
+
+
+      else{
+
+       console.log( "Equipamentos e objetos encontrados:" , Player.inventario);  
+     
+
+       }
 
    }
 
-   }
+}
+
+   // if (local!= "Hall de entrada" && Player.escolha===1) {
 
 
+   //    local="Hall de entrada"
 
-   if (local!= "Hall de entrada" && Player.escolha===1) {
-
-
-      local="Hall de entrada"
-
-   }
+   // }
 
 
-    if (local==="Hall de entrada"){
+   if (Player.vida<=0) {}
+
+
+    else if  (local==="Hall de entrada"){
 
 
 
@@ -103,19 +115,19 @@ while(jogando=true){
                   `)
 
     // Player.escolha= prompt("O que você faz?");
-      escolha();  
-
-   }
-   
+      escolha();
+      inventario();  
 
    if (Player.escolha==="1"){
    local= "Balcão";
    }
   
 
+   }
+   
 
-
-   if (local==="Balcão"){  
+   
+   else if  (local==="Balcão"){  
       
 
    console.log("O policial está no(a)" , local);
@@ -132,8 +144,7 @@ while(jogando=true){
 
       escolha();  
       inventario();
-   
-   } 
+
 
 
 
@@ -159,11 +170,47 @@ while(jogando=true){
 
       escolha();
       inventario();
+   }
+
+     
+   else if(Player.escolha==="1") {
+
+
+   local="Hall de entrada"  
+
+   }
 
 
    } 
 
-}
+   else if((Player.escolha==="p" || Player.escolha==="i") && Player.inventario.includes("CARTÃO DE ACESSO")) {
+
+
+   console.log("O policial está no(a)" , local);
+   console.log(`
+                  
+                   1- Hall de entrada
+                   I- inventario
+
+
+
+                `)
+
+   
+
+      escolha();
+     
+   }
+
+   }
+
+ 
+
+
+
+
+
+
 
 
 
