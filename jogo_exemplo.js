@@ -3,6 +3,7 @@ const prompt=require("prompt-sync")();
 
 let jogando=true;
 let local="Hall de entrada"
+let encontro=false;
 
 
 
@@ -35,6 +36,44 @@ const Zumbi={
 }
 
 
+function combate(inimigo) {
+
+
+ 
+console.log(`1-ATIRAR`)
+Player.acao=Number(prompt("Você encontra um zumbi o que o que voce faz"))  
+
+if (Player.balas>0 && Player.acao===1){
+
+      Player.acao=0
+      console.log("Atirou e...", );
+      Player.balas=Player.balas-1;
+      Player.precisaoTiro= Math.random();
+      inimigo.velocidade= Math.random();
+
+
+
+         if (Player.precisaoTiro>inimigo.velocidade){
+
+         // console.log(Player.precisaoTiro , inimigo.velocidade);
+         console.log("O tiro acertou");
+         Player.balas= Player.balas -1;
+         console.log("Balas restantes; ", Player.balas );
+         inimigo.vida=inimigo.vida - Player.dano;
+         console.log("O zumbi ainda tem; ", inimigo.vida );
+
+         }
+
+         else{
+
+           // console.log(Player.precisaoTiro , inimigo.velocidade);
+           console.log("Voce errou");
+
+      }
+
+   }
+
+}
 
 
 while(jogando===true){
@@ -111,15 +150,30 @@ while(jogando===true){
       inventario();  
 
    if (Player.escolha==="1"){
+  
    local= "Balcão";
+   encontro= Math.random()<0.5; ///Encontro Randomico
+   console.log(encontro);
+
+
+   
    }
   
 
    }
    
 
+
+   if (encontro===true) {
+
+
+   combate(Zumbi)
+
+
+
+   }
    
-   else if  (local==="Balcão"){  
+   else if  (local==="Balcão" && encontro===false){  
          
 
          if (!Player.inventario.includes("CARTÃO DE ACESSO")) {
