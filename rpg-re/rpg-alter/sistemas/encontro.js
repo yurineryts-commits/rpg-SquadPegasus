@@ -25,7 +25,7 @@ function encontro() {
             console.log("Um morcego te dá um rasante!");
             return morcego;
         }
-        
+   
     }
 }
 

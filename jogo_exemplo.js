@@ -6,11 +6,6 @@ let local="Hall de entrada"
 
 
 
-
-
-
-
-
 const Player={
 
    vida:10,

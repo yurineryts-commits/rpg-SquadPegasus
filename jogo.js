@@ -8,7 +8,7 @@ let local = "vila";        // onde o herói está agora
 let jogando = true;        // o jogo continua enquanto for true
 const TESTE = false;       // true = a sorte fica fixa, para o roteiro de teste
 
-// ===== HERÓI =====
+// ===== HERÓI ===== 
 let nome = prompt("Qual é o nome do seu herói? ");
 let vida = 10;
 let veneno = 0;            // quantos passos o veneno ainda dura
