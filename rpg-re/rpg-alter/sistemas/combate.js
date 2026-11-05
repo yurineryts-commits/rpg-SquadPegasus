@@ -121,15 +121,10 @@ function combate(inimigo) {
     }
 
 
-
-
-
   }
 
 
-
 }
-
 
 //PARA TESTES
 
