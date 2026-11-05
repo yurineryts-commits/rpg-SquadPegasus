@@ -1,0 +1,3 @@
+O cenario do jogo seria uma cena de assassinato onde os suspeitos, um sendo culpado, estao sendo retidos para investigacao. Voce, como detetive, pode observar locais e objetos para conseguir uma descricao. Tambem pode conversar com os suspeitos, eles dariam seus alibis, descrevendo o que fizeram no local ate o momento e fariam comentarios sobre os outros personagens. A partir da analise do corpo, dos objetos encontrados e do depoimento dos personagens, voce deveria descrever o que aconteceu ao final do jogo, expondo a arma do crime e o culpado.
+
+O jogo termina ao fazer a acusacao, voce vence se sua acusacao estiver correta e perde se a acusacao estiver incorreta.
